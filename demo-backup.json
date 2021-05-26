@@ -1,0 +1,15 @@
+{
+  "backupDrive": {
+    "path": "A:\\Backup"
+  },
+  "folders": [
+    {
+      "name": "Downloads",
+      "path": "C:\\Users\\Micah\\Downloads"
+    },
+    {
+      "name": "Affinity",
+      "path": "E:\\Pictures\\Void"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self';">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'unsafe-inline'; style-src-elem 'self';">
+  <title>Servabit</title>
+  <link rel="stylesheet" href="../assets/photon/css/photon.min.css">
+</head>
+
+<body>
+  <div class="window" style="border-radius: 5px; transition: filter 0.3s;" id="window">
+    <header class="toolbar toolbar-header" style="-webkit-app-region: drag; border-radius: 5px 5px 0 0;">
+      <h1 class="title" style="-webkit-app-region: drag">Servabit - quick and easy backups</h1>
+
+      <div class="toolbar-actions">
+        <div class="btn-group">
+          <button class="btn btn-default active">
+            <span class="icon icon-home"></span>
+          </button>
+          <button class="btn btn-default" title="Add folder to backup" id="addFolder">
+            <span class="icon icon-plus"></span>
+          </button>
+          <button class="btn btn-default" title="Remove selected folder from backup" id="removeFolder">
+            <span class="icon icon-minus"></span>
+          </button>
+          <button class="btn btn-default" title="Open settings" id="openSettings">
+            <span class="icon icon-cog"></span>
+          </button>
+        </div>
+        <button class="btn btn-default" title="Back up all selected files and folders">
+          <span class="icon icon-arrows-ccw" style="margin-right: 5px;"></span>
+          Backup now
+        </button>
+        <button class="btn btn-default pull-right" title="Close the app and cancel backup" id="exit">
+          <span class="icon icon-cancel" style="padding-right: 3px;"></span>
+          Exit
+        </button>
+      </div>
+    </header>
+    <div class="window-content">
+      <div class="pane-group" style="border-radius: 5px">
+        <div class="pane-sm sidebar" style="border-radius: 5px 0px 0px 5px">
+          <nav class="nav-group" id="folders">
+            <h5 class="nav-group-title">Current folders</h5>
+          </nav>
+        </div>
+        <div class="pane" style="border-radius: 0 5px 5px 0">
+          <table class="table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Kind</th>
+                <th>File Size</th>
+              </tr>
+            </thead>
+            <tbody id="files">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/index.js" charset="utf-8"></script>
+</body>
+
+</html>

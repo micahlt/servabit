@@ -1,0 +1,81 @@
+{
+  "name": "servabit",
+  "version": "1.0.0",
+  "description": "Easy Electron-based backup utility for local devices",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micahlt/servabit.git"
+  },
+  "keywords": [
+    "backup",
+    "recover",
+    "servabit",
+    "files"
+  ],
+  "author": "Micah Lindley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/micahlt/servabit/issues"
+  },
+  "homepage": "https://github.com/micahlt/servabit#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.57",
+    "@electron-forge/maker-deb": "^6.0.0-beta.57",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.57",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.57",
+    "@electron-forge/maker-wix": "^6.0.0-beta.57",
+    "@electron-forge/maker-zip": "^6.0.0-beta.57",
+    "electron": "^13.0.1",
+    "electron-wix-msi": "^3.2.0"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "fs-extra": "^10.0.0",
+    "windows-network-drive": "^3.0.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-wix",
+          "config": {
+            "name": "Servabit",
+            "shortName": "Servabit",
+            "shortcutFolderName": "Servabit",
+            "manufacturer": "Micah Lindley",
+            "appIconPath": "./assets/icons/64x64.ico",
+            "version": "0.8.0"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "servabit"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
