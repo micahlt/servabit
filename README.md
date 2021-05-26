@@ -1,7 +1,8 @@
-<div style="text-align: center">
+<div align="center">
 <img src="assets/banner.png" alt="Servabit" />
 
 ### Quick and easy local backups
+  
 </div>
 
 ### FAQ
