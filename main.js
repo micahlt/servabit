@@ -2,10 +2,12 @@ const path = require('path');
 
 const {
   app,
-  BrowserWindow
+  BrowserWindow,
+  ipcMain
 } = require('electron');
 
 global.dataDir = app.getPath('userData');
+global.appVersion = "Version 0.8.3";
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -33,4 +35,9 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', function() {
   if (process.platform !== 'darwin') app.quit();
+})
+
+ipcMain.on('restartApp', (e) => {
+  app.relaunch();
+  app.exit();
 })

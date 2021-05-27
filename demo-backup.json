@@ -11,5 +11,10 @@
       "name": "Affinity",
       "path": "E:\\Pictures\\Void"
     }
+  ],
+  "disabled": [
+    {
+      "path": "E:\\Pictures\\Void"
+    }
   ]
 }
